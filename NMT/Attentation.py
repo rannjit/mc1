@@ -1,25 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
 
 # https://blog.keras.io/a-ten-minute-introduction-to-sequence-to-sequence-learning-in-keras.html
-
-# In[ ]:
-
-
-# Load the Drive helper and mount
-from google.colab import drive
-drive.mount('/content/drive')
-import os
-os.chdir("/content/drive/My Drive/Toxic")
-
-
-# In[ ]:
-
-
-from __future__ import print_function, division
-from builtins import range, input
-# Note: you may need to update your version of future
-# sudo pip install -U future
 
 import os, sys
 
