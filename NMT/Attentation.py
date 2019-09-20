@@ -45,7 +45,7 @@ MAX_NUM_WORDS = 20000
 EMBEDDING_DIM = 100
 
 
-# In[ ]:
+# https://machinelearningmastery.com/teacher-forcing-for-recurrent-neural-networks/
 
 
 # Where we will store the data
@@ -208,12 +208,12 @@ x = embedding_layer(encoder_inputs_placeholder)
 encoder = Bidirectional(LSTM(
   LATENT_DIM,
   return_sequences=True,
-  # dropout=0.5 # dropout not available on gpu
+
 ))
 encoder_outputs = encoder(x)
 
 
-# Set up the decoder - not so simple
+# Set up the decoder
 decoder_inputs_placeholder = Input(shape=(max_len_target,))
 
 # this word embedding will not use pre-trained vectors
@@ -368,7 +368,7 @@ plt.show()
 
 
 ##### Make predictions #####
-# As with the poetry example, we need to create another model
+# we need to create another model
 # that can take in the RNN state and previous word as input
 # and accept a T=1 sequence.
 
